@@ -6,7 +6,7 @@ require_relative("../team")
 
 class TestTeam < MiniTest::Test
     def setup()
-        @team = Team.new("Newts",['bob','gary'],'steve')
+        @team = Team.new("Newts",['bob','gary'],'steve', 0)
     end
 
 
@@ -20,6 +20,10 @@ class TestTeam < MiniTest::Test
 
     def test_get_coach
       assert_equal('steve', @team.coach)
+    end
+
+    def test_points
+      assert_equal(0, @team.points)
     end
     
     def test_set_coach
@@ -38,5 +42,15 @@ class TestTeam < MiniTest::Test
 
     def test_check_for_player__in_array
       assert_equal(true, @team.check_for_player('bob'))
+    end
+
+    def test_points_won
+      
+      assert_equal(5, @team.points_won_or_lost('win'))
+    end
+
+    def test_points_lost
+      
+      assert_equal(0, @team.points_won_or_lost('lost'))
     end
 end
