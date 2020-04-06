@@ -24,11 +24,10 @@ class Team
   end
 
   def points_won_or_lost(outcome)
-    if(outcome == 'win')
-        @points += 5
+    if (outcome == "win")
+      @points += 5
     else
-        @points += 0
+      @points += 0
     end
   end
-
 end
