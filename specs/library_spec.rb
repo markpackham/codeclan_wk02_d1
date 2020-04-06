@@ -21,4 +21,8 @@ class TestLibrary < MiniTest::Test
   def test_get_book
     assert_equal({ title: "dune", rental_details: { student_name: "Anonymous", date: "06/06/06" } }, @library.get_book("dune"))
   end
+
+  def test_get_book_rental_info
+    assert_equal({ student_name: "Anonymous", date: "06/06/06" }, @library.get_book_rental_info("dune"))
+  end
 end
