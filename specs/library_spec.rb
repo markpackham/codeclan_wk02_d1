@@ -12,6 +12,9 @@ class TestLibrary < MiniTest::Test
   end
 
   def test_get_books
-    p @library.books
+    books = [{ title: "lord_of_the_rings", rental_details: { student_name: "Jeff", date: "01/12/16" } },
+        { title: "dune", rental_details: { student_name: "Anonymous", date: "06/06/06" } },
+        { title: "wuthering heights", rental_details: { student_name: "Liz", date: "16/04/19" } }]
+    assert_equal(books, @library.books)
   end
 end
