@@ -24,4 +24,13 @@ class Library
   def add_book(new_book)
     @books.push(new_book)
   end
+
+  def change_rent_info(title, student, date)
+    for bo in books
+      if (bo[:title] == title)
+        bo[:rental_details][:student_name] = student
+        bo[:rental_details][:date] = date
+      end
+    end
+  end
 end
