@@ -5,7 +5,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 require_relative("../team")
 
 class TestTeam < MiniTest::Test
-  def setup()
-    @team = Team.new()
-  end
+    def setup()
+        @team = Team.new()
+      end
 end

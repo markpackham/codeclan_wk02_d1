@@ -6,6 +6,25 @@ require_relative("../student")
 
 class TestStudent < MiniTest::Test
   def setup()
-    @student = Student.new()
+    @student = Student.new("Craig", "e39")
   end
+
+  def test_get_student_name
+    assert_equal("Craig", @student.name)
+  end
+
+  def test_get_cohort
+    assert_equal("e39", @student.cohort)
+  end
+
+  def test_set_name
+    @student.name = "Bob"
+    assert_equal("Bob", @student.name)
+  end
+
+  def test_set_cohort
+    @student.cohort = "e40"
+    assert_equal("e40", @student.cohort)
+  end
+  
 end
